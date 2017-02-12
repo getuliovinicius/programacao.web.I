@@ -7,6 +7,6 @@ Exercícios da disciplina de Programação Web I do curso de Analise e Desenvolv
 Os exercícios foram feitos em sala de aula utilizando:
 - Editor de Código: VSCode 1.8.1;
 - NodeJS: 7.5.0;
-- Angular: ;
+- AngularJS: ;
 - Express: ;
 - Sistema Operacional: Ubuntu 16.04 LTS
