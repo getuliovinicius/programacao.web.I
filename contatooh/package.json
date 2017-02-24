@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.5.6",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "express-load": "^1.1.15",
+    "nodemon": "^1.11.0"
   }
 }
