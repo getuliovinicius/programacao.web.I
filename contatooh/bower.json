@@ -1,0 +1,20 @@
+{
+  "name": "contatooh",
+  "description": "Agenda de Contatos",
+  "main": "server.js",
+  "authors": [
+    "Getulio Vinicius <getuliovinits@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/getuliovinicius/programacao.web.I",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2"
+  }
+}

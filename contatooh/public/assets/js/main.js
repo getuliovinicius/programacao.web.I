@@ -1,4 +1,2 @@
-jQuery(function () {
-	
-
-});
+angular.module("contatooh",[]);
+// jQuery(function () {});
