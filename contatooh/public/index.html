@@ -5,25 +5,29 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
 	<title>TITULO</title>
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css" media="screen">
 </head>
 	
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<h1>Olá, Bem vindo ao express!</h1>
-				<button>Novo</button>
-				<p>Contatos cadastrados {{total}}</p>
+<body ng-controller="ContatosController">
+
+	<div class="container-fluid">
+    	<div class="row">
+        	<div class="col-xs-12">
+				<div ng-view></div>
 			</div>
-		</div>
-	</div>	
+        </div>
+    </div>
+
 	<!-- Carrega os scripts e bibliotecas javascript -->
-	<script type="text/javascript" src="vendor/angular/angular.min.js"></script>
-	<script type="text/javascript" src="assets/js/main.js"></script>
-	<script type="text/javascript" src="assets/js/jquery/jquery-3.1.1.min.js"></script>	
-	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="vendor/angular/angular.js"></script>
+	<script type="text/javascript" src="vendor/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/controllers/ContatosController.js"></script>
+	<script type="text/javascript" src="js/controllers/ContatoController.js"></script>
+	<script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>	
+	<script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 	
 </html>

@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../css_dev/main.css",
+	"sources": [
+		"../css_dev/main.scss"
+	],
+	"sourcesContent": [
+		""
+	],
+	"mappings": "",
+	"names": []
+}
