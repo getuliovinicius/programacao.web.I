@@ -36,7 +36,15 @@ module.exports = function() {
         }
         //console.log(res.json(filtrados[0]));
         
-    }
+    };
+
+    controller.removeContato = function(req, res) {
+        contatos = contatos.filter(function(contato) {
+            return contato._id != req.params.id;
+        });
+        res.status(204).end();
+    };
 
     return controller;
+
 };
