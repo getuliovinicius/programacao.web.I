@@ -12,8 +12,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 bg-color-padding">
-            <button class="btn btn-primary" ng-click="incrementa()">Novo</button>
+        <div class="col-xs-12">
+            <a href="#!/contato" class="btn btn-primary">Novo contato</a>
         </div>
     </div>
     <hr>
@@ -47,7 +47,7 @@
                     <tbody>
                         <tr ng-repeat="c in contatos | filter: filtro">
                             <td>
-                                <a href="#">{{c.nome}}</a>
+                                <a href="#!/contato/{{c._id}}">{{c.nome}}</a>
                             </td>
                             <td>{{c.email}}</td>
                             <td class="text-center">

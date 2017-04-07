@@ -4,6 +4,11 @@ module.exports = function(app) {
     app.get('/contatos/:id', controller.obtemContato);
     app.delete('/contatos/:id', controller.removeContato);*/
 
-    app.route('/contatos').get(controller.listaContatos);
-    app.route('/contatos/:id').get(controller.obtemContato).delete(controller.removeContato);
+    app.route('/contatos')
+        .get(controller.listaContatos)
+        .post(controller.salvaContato);
+
+    app.route('/contatos/:id')
+        .get(controller.obtemContato)
+        .delete(controller.removeContato);
 }

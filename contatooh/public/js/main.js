@@ -7,9 +7,14 @@ angular.module('contatooh', ['ngRoute', 'ngResource']).config(function($routePro
 
     $routeProvider.when('/contato/:contatoId', {
         templateUrl: 'partials/contato.html',
-        controller: 'ContatosController'
+        controller: 'ContatoController'
     });
 
-    $routeProvider.otherwise('/contatos');
+    $routeProvider.when('/contato', {
+        templateUrl: 'partials/contato.html',
+        controller: 'ContatoController'
+    });
+
+    $routeProvider.otherwise({redirectTo: '/contatos'});
 
 });

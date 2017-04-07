@@ -1,6 +1,8 @@
 var express = require('express');
 //var home = require('../app/routes/home')
 var load = require('express-load');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 module.exports = function() {
     var app = express();
@@ -9,6 +11,14 @@ module.exports = function() {
     app.set('view engine', 'ejs');
     app.set('views', './app/views');
     //home(app);
-    load('controllers', {cwd: 'app'}).then('routes').into(app);
+
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.json());
+    app.use(methodOverride());
+
+    load('controllers', {cwd: 'app'})
+        .then('routes')
+        .into(app);
+    
     return app;
 };

@@ -1,6 +1,6 @@
-angular.module('contatooh').controller('ContatosController', function ($scope, /*$http*/ $resource) {
-    // $scope.total = 0;
-    var Contato = $resource('contatos/:id');
+angular.module('contatooh').controller('ContatosController', function ($scope, /*$http*/ $resource, Contato) {
+  
+    //var Contato = $resource('contatos/:id');
 
     $scope.mensagem = {};
 
