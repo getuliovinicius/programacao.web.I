@@ -1,9 +1,5 @@
 # Programação Web I
 
-## Repositório no Github
-
-Acesse os exercícios no Repositório do Github [programacao.web.I](https://github.com/getuliovinicius/programacao.web.I).
-
 ## Descrição
 
 Códigos desenvolvidos com a Linguagem Javascript e Marcações HTML/CSS na disciplina de Programação Web I do curso de Analise e Desenvolvimento de Sistemas da FATEC de Franca.
