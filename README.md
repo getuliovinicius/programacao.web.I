@@ -18,18 +18,21 @@ Os exercícios foram feitos em sala de aula, laboratório, no 1º Semestre do an
 
 ## Aplicativo "contatooh"
 
-Após o download dos arquivos, ou clone do repositósio, acesse diretório **contatooh"
+Após o download dos arquivos, ou clone do repositósio, é necessário fazer a instalação das dependências do projeto.
 
-``` bash
+Acesse diretório `./contatooh`":
+
+``` sh
 $ cd contatooh
 ```
-rode o comando
+execute os comandos:
 
-``` bash
+``` sh
 $ npm install
+$ ./bower install
 ```
 
-para instalar as dependências do projeto.
+Após a execução destes dois comandos o projeto ficará pronto para edição. Até hj :) pelo menos, rs
 
 ## Licença:
 
