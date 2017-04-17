@@ -55,28 +55,30 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
+	  
           
-            <li>
-    <li class="toctree-l1 current">
-        <a class="current" href=".">Inicio</a>
-        
-            <ul>
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Inicio</a>
+    <ul class="subnav">
             
-                <li class="toctree-l3"><a href="#programacao-web-i">Programação Web I</a></li>
-                
-                    <li><a class="toctree-l4" href="#repositorio-no-github">Repositório no Github</a></li>
-                
-                    <li><a class="toctree-l4" href="#descricao">Descrição</a></li>
-                
-                    <li><a class="toctree-l4" href="#aplicativo-contatooh">Aplicativo "contatooh"</a></li>
-                
-                    <li><a class="toctree-l4" href="#licenca">Licença:</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l2"><a href="#programacao-web-i">Programação Web I</a></li>
+    
+        <ul>
         
-    </li>
-<li>
+            <li><a class="toctree-l3" href="#repositorio-no-github">Repositório no Github</a></li>
+        
+            <li><a class="toctree-l3" href="#descricao">Descrição</a></li>
+        
+            <li><a class="toctree-l3" href="#aplicativo-contatooh">Aplicativo "contatooh"</a></li>
+        
+            <li><a class="toctree-l3" href="#licenca">Licença</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
           
         </ul>
       </div>
@@ -129,16 +131,18 @@
 <li>Sistema Operacional: Ubuntu 16.04 LTS.</li>
 </ul>
 <h2 id="aplicativo-contatooh">Aplicativo "contatooh"</h2>
-<p>Após o download dos arquivos, ou clone do repositósio, acesse diretório **contatooh"</p>
-<pre><code class="bash">$ cd contatooh
+<p>Após o download dos arquivos, ou clone do repositósio, é necessário fazer a instalação das dependências do projeto.</p>
+<p>Acesse diretório <code>./contatooh</code>":</p>
+<pre><code class="sh">$ cd contatooh
 </code></pre>
 
-<p>rode o comando</p>
-<pre><code class="bash">$ npm install
+<p>execute os comandos:</p>
+<pre><code class="sh">$ npm install
+$ ./bower install
 </code></pre>
 
-<p>para instalar as dependências do projeto.</p>
-<h2 id="licenca">Licença:</h2>
+<p>Após a execução destes dois comandos o projeto ficará pronto para edição. Até hj :) pelo menos, rs</p>
+<h2 id="licenca">Licença</h2>
 <p><a href="https://github.com/getuliovinicius/programacao.we.I/blob/master/LICENSE">GNU GENERAL PUBLIC LICENSE - Version 3, 29 June 2007</a>.</p>
               
             </div>
@@ -166,7 +170,7 @@
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/getuliovinicius/programacao.web.I" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/getuliovinicius/programacao.web.I" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
       
@@ -178,6 +182,6 @@
 </html>
 
 <!--
-MkDocs version : 0.16.1
-Build Date UTC : 2017-04-07 00:10:40
+MkDocs version : 0.16.3
+Build Date UTC : 2017-04-17 04:18:44
 -->
