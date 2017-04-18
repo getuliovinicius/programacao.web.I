@@ -38,6 +38,6 @@ $ ./bower install
 
 Após a execução destes dois comandos o projeto ficará pronto para edição. Até hj :) pelo menos, rs
 
-## Licença:
+## Licença
 
 [GNU GENERAL PUBLIC LICENSE - Version 3, 29 June 2007](https://github.com/getuliovinicius/programacao.we.I/blob/master/LICENSE).
