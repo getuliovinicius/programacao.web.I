@@ -9,10 +9,14 @@ module.exports = function() {
 
     var	app	= express();
     
-    // variável	de ambiente
+    /**
+     * variável	de ambiente
+     */
     app.set('port', 3000);
     
-    // middlewares
+    /**
+     * middlewares
+     */
     app.use(express.static('./public'));    
     app.set('view engine', 'ejs');
     app.set('views', './app/views');
@@ -20,7 +24,9 @@ module.exports = function() {
     app.use(bodyParser.json());
     app.use(require('method-override')());
 
-    // home(app);
+    /**
+     * home(app);
+     */
     load('models', {cwd: 'app'}).then('controllers').then('routes').into(app);    
 
     return app;
