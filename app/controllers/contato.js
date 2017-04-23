@@ -4,14 +4,17 @@ var contatos = [
     {
         _id: 1, nome: 'João Silva',
         email: 'cont1@empresa.com.br'
+        telefone: '16-3722-0000'
     },
     {
         _id: 2, nome: 'João Plenário',
         email: 'cont2@empresa.com.br'
+        telefone: '16-3722-0000'
     },
     {
         _id: 3, nome: 'Maria Ferreira',
         email: 'cont3@empresa.com.br'
+        telefone: '16-3722-0000'
     }
 ];
 

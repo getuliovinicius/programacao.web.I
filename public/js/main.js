@@ -17,6 +17,14 @@ angular.module('contatooh', ['ngRoute', 'ngResource']).config(function($routePro
         controller: 'ContatoController'
     });
 
+    /**
+     * item da prova
+     */
+    $routeProvider.when('/ajuda', {
+        templateUrl: 'partials/ajuda.html'
+        //controller: 'AjudaController'
+    });
+
     $routeProvider.otherwise({redirectTo: '/contatos'});
 
 });
