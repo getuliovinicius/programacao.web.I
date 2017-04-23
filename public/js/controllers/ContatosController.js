@@ -15,7 +15,7 @@ angular.module('contatooh').controller('ContatosController', function($scope, /*
             },
             function(erro) {
 
-                console.log(erro);
+                //console.log(erro);
 
                 $scope.mensagem = {
                     texto: 'Não foi possível obter a lista de contatos',
@@ -29,6 +29,8 @@ angular.module('contatooh').controller('ContatosController', function($scope, /*
     buscaContatos();
 
     $scope.remove = function(contato) {
+
+        var idDel = contato._id;
 
         console.log(contato);
 
@@ -53,7 +55,7 @@ angular.module('contatooh').controller('ContatosController', function($scope, /*
                 buscaContatos();
 
                 $scope.mensagem = {
-                    texto: 'Contato #' + contato._id + ' excluido',
+                    texto: 'Contato #' + idDel  + ' excluido',
                     class: 'info'
                 }
 

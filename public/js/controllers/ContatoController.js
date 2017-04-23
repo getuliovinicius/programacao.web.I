@@ -16,7 +16,7 @@ angular.module('contatooh').controller('ContatoController',	function($scope, $ro
                 console.log(erro);
 
                 $scope.mensagem = {
-                    texto: 'Não foi possível obter o contato'
+                    texto: 'Não foi possível obter o contato',
                     class: 'danger'
                 };
 
@@ -31,7 +31,7 @@ angular.module('contatooh').controller('ContatoController',	function($scope, $ro
 			function() {
 				$scope.mensagem = {
 					texto: 'Contato salvo com sucesso.',
-					class: 'info'
+					class: 'success'
 				};
 				$scope.contato = new Contato();
 			},
@@ -39,7 +39,8 @@ angular.module('contatooh').controller('ContatoController',	function($scope, $ro
 				$scope.mensagem = {
 					texto: 'Não foi possível salvar o contato.',
 					class: 'danger'
-			}
+                };
+			}   
 		);
     };
 
