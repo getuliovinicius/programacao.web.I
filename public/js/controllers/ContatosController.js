@@ -14,24 +14,25 @@ angular.module('contatooh').controller('ContatosController', function($scope, /*
                 $scope.mensagem = {};
             },
             function(erro) {
-                
+
                 console.log(erro);
 
                 $scope.mensagem = {
-                    texto: 'Não foi possível obter a lista de contatos'
+                    texto: 'Não foi possível obter a lista de contatos',
+                    class: 'danger'
                 };
 
             }
         );
     }
-    
+
     buscaContatos();
 
     $scope.remove = function(contato) {
 
         console.log(contato);
 
-        Contato.delete({id: contato._id},
+        /*Contato.delete({id: contato._id},
             buscaContatos,
             function(erro) {
 
@@ -42,6 +43,29 @@ angular.module('contatooh').controller('ContatosController', function($scope, /*
                 };
 
             }
+        );*/
+
+        Contato.delete(
+
+            {id: idDel},
+
+            function() {
+                buscaContatos();
+
+                $scope.mensagem = {
+                    texto: 'Contato #' + contato._id + ' excluido',
+                    class: 'info'
+                }
+
+            },
+
+            function(erro) {
+                $scope.mensagem = {
+                    texto: 'Não foi possível excluir o contato.',
+                    class: 'danger'
+                }
+            }
+
         );
 
     };

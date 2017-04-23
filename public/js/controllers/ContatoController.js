@@ -1,8 +1,10 @@
 // public/js/controllers/ContatoController.js
 
 angular.module('contatooh').controller('ContatoController',	function($scope, $routeParams, /*$resource,*/ Contato) {
-        
+
     console.log($routeParams.contatoId);
+
+    $scope.mensagem = {};
 
     if($routeParams.contatoId) {
         Contato.get({id: $routeParams.contatoId},
@@ -15,6 +17,7 @@ angular.module('contatooh').controller('ContatoController',	function($scope, $ro
 
                 $scope.mensagem = {
                     texto: 'Não foi possível obter o contato'
+                    class: 'danger'
                 };
 
             }
@@ -24,9 +27,20 @@ angular.module('contatooh').controller('ContatoController',	function($scope, $ro
     }
 
     $scope.salvaContato = function() {
-        $scope.contato.$save();
+        $scope.contato.$save().then(
+			function() {
+				$scope.mensagem = {
+					texto: 'Contato salvo com sucesso.',
+					class: 'info'
+				};
+				$scope.contato = new Contato();
+			},
+			function(erro) {
+				$scope.mensagem = {
+					texto: 'Não foi possível salvar o contato.',
+					class: 'danger'
+			}
+		);
     };
-
-    
 
 });

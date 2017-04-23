@@ -1,41 +1,61 @@
 <!-- public/partials/contatos.html -->
-
-<div class="jumbotron">
-    <div class="page-header">
-        <h1>Contatooh <small>Agenda de contatos</small></h1>
+<div class="row">
+    <div class="col-xs-2">
+        <div class="jumbotron">
+            <div class="page-header">
+                <h1>Contatooh <small>Agenda de contatos</small></h1>
+            </div>
+        </div>
     </div>
 </div>
 
-<p ng-show="mensagem.texto">{{mensagem.texto}}</p>
-
-<div>
-    <a class="btn btn-primary" ng-href="#!/contato">Novo Contato</a>
+<div class="row">
+    <div class="col-xs-12">
+        <p ng-show="mensagem.texto">{{mensagem.texto}}</p>
+    </div>
 </div>
 
-<p class="text-info" ng-show="contatos.length">Contatos cadastrados: {{contatos.length}}</p>
-
-<p class="text-info" ng-hide="contatos.length">Não há contatos cadastrados.</p>
-
-<div class="form-group">
-    <label for="nome" class="sr-only">Nome completo:</label>
-    <input type="search" placeholder="parte do nome" ng-model="filtro">
+<div class="row">
+    <div class="col-xs-12">
+        <a class="btn btn-primary" ng-href="#!/contato">Novo Contato</a>
+    </div>
 </div>
 
-<div>
-    <table class="table table-responsive table-hover">
-        <tr>
-            <th>NOME</th>
-            <th>E-MAIL</th>
-            <th class="text-center">Ação</th>
-        </tr>
-        <tr ng-repeat="contato in contatos | filter: filtro">
-            <td>
-                <a ng-href="#!/contato/{{contato._id}}">{{contato.nome}}</a>
-            </td>
-            <td>{{contato.email}}</td>
-            <td class="text-center">
-                <button class="btn btn-warning" ng-click="remove(contato)">Remover</button>
-            </td>
-        </tr>
-    </table>
+<div class="row">
+    <div class="col-xs-12">
+        <p class="text-info" ng-show="contatos.length">Contatos cadastrados: {{contatos.length}}</p>
+        <p class="text-info" ng-hide="contatos.length">Não há contatos cadastrados.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group form-group-lg has-primary has-feedback">
+        <div class="col-xs-12">
+            <label for="nome" class="sr-only">Filtro:</label>
+            <input type="search" id="filtro" name="filtro" placeholder="parte do nome" class="form-control" ng-model="filtro">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <tr>
+                    <th>NOME</th>
+                    <th>E-MAIL</th>
+                    <th class="text-center">Ação</th>
+                </tr>
+                <tr ng-repeat="contato in contatos | filter: filtro">
+                    <td>
+                        <a ng-href="#!/contato/{{contato._id}}">{{contato.nome}}</a>
+                    </td>
+                    <td>{{contato.email}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-warning" ng-click="remove(contato)">Remover</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
