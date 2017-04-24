@@ -19,9 +19,22 @@ http.createServer(function (req, res) {
  * Versão COM o express
  */
 
-var	http = require('http');
+/*var	http = require('http');
 var	app	= require('./config/express')();
 
+http.createServer(app).listen(app.get('port'), function(){
+
+    console.log('Express Server escutando na porta ' + app.get('port'));
+
+});*/
+
+/**
+ * Versão COM o express e o mongose
+ */
+
+var	http = require('http');
+var	app	= require('./config/express')();
+require('./config/database.js')('mongodb://localhost/contatooh');
 http.createServer(app).listen(app.get('port'), function(){
 
     console.log('Express Server escutando na porta ' + app.get('port'));

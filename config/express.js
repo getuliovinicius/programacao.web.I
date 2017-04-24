@@ -27,10 +27,11 @@ module.exports = function() {
     app.use(methodOverride());
 
     /**
-     * home(app);
+     * carregamento
      */
-    // load('models', {cwd: 'app'}).then('controllers').then('routes').into(app);
-    load('controllers', {cwd: 'app'}).then('routes').into(app);
+    // home(app);
+    // load('controllers', {cwd: 'app'}).then('routes').into(app);
+    load('models', {cwd: 'app'}).then('controllers').then('routes').into(app);
 
     return app;
 
