@@ -5,13 +5,12 @@ angular.module('contatooh').controller('ContatosController', function($scope, /*
     $scope.contatos = [];
     $scope.total = 0;
     $scope.filtro = '';
-    $scope.mensagem = {texto: ''};
+    $scope.mensagem = {texto: '', class: ''};
 
     function buscaContatos() {
         Contato.query(
             function(contatos) {
                 $scope.contatos = contatos;
-                $scope.mensagem = {};
             },
             function(erro) {
 
@@ -30,8 +29,6 @@ angular.module('contatooh').controller('ContatosController', function($scope, /*
 
     $scope.remove = function(contato) {
 
-        var idDel = contato._id;
-
         console.log(contato);
 
         /*Contato.delete({id: contato._id},
@@ -49,15 +46,16 @@ angular.module('contatooh').controller('ContatosController', function($scope, /*
 
         Contato.delete(
 
-            {id: idDel},
+            {id: contato._id},
 
             function() {
-                buscaContatos();
 
                 $scope.mensagem = {
-                    texto: 'Contato #' + idDel  + ' excluido',
-                    class: 'info'
+                    texto: 'Contato #' + contato._id  + ' excluido',
+                    class: 'success'
                 }
+
+                buscaContatos();
 
             },
 
