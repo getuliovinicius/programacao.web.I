@@ -15,6 +15,9 @@ module.exports = function() {
             index: {
                 unique: true
             }
+        },
+        telefone: {
+            type: String,
         }
     });
 
