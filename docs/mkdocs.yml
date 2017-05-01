@@ -1,7 +1,7 @@
 site_name: Programação Web I
 site_description: Lista de exercícios da disciplina de Programação Web 1 do curso de Analise e Desenvolvimento de Sistemas da FATEC de Franca.
 site_author: Getúlio Vinicius <getuliovinits@gmail.com>
-google_analytics: ['UA-70830801-10', 'getuliovinicius.github.io/programacao.web.I/']
+google_analytics: ['UA-70830801-10', 'auto']
 repo_url: https://github.com/getuliovinicius/programacao.web.I
 repo_name: GitHub
 edit_uri: blob/master/docs/mds/
@@ -9,10 +9,17 @@ remote_branch: gh-pages
 remote_name: origin
 docs_dir: 'mds'
 pages:
-  - Inicio: index.md
-#  - Lista de exercícios 1: lista-1.md
-#  - Lista de exercícios 2: lista-2.md
-#  - Lista de exercícios 3: lista-3.md
-#  - Lista de exercícios 4: lista-4.md
-#  - Lista de exercícios 5: lista-5.md
+    - Inicio: index.md
 theme: readthedocs
+extra:
+    version: 1.0
+markdown_extensions:
+    - smarty
+    - nl2br
+    - admonition
+    - codehilite
+    - sane_lists
+    - toc:
+        permalink: True
+        separator: "_"
+    - footnotes
