@@ -44,4 +44,8 @@ angular.module('contatooh').controller('ContatoController',	function($scope, $ro
 		);
     };
 
+    Contato.query(function(contatos) {
+        $scope.contatos = contatos;
+    });
+
 });

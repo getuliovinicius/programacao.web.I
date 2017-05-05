@@ -51,6 +51,7 @@
                     <th>NOME</th>
                     <th>E-MAIL</th>
                     <th>TELEFONE</th>
+                    <th>Emergência</th>
                     <th class="text-center">Ação</th>
                 </tr>
                 <tr ng-repeat="contato in contatos | filter: filtro">
@@ -59,6 +60,7 @@
                     </td>
                     <td>{{contato.email}}</td>
                     <td>{{contato.telefone}}</td>
+                    <td>{{contato.emergencia.nome}}</td>
                     <td class="text-center">
                         <button class="btn btn-warning" ng-click="remove(contato)">Remover</button>
                     </td>

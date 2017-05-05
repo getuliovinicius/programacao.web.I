@@ -18,6 +18,10 @@ module.exports = function() {
         },
         telefone: {
             type: String,
+        },
+        emergencia: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'Contato'
         }
     });
 

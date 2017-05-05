@@ -30,7 +30,8 @@ module.exports = function(app) {
         
         //res.json(contatos);
 
-        Contato.find().exec().then(
+        //Contato.find().exec().then(
+        Contato.find().populate('emergencia').exec().then(
             function(contatos) {
                 res.json(contatos);
             },
@@ -132,6 +133,11 @@ module.exports = function(app) {
         res.json(contato);*/
 
         var _id = req.body._id;
+
+        /**
+         * testando por undefined
+         */
+        req.body.emergencia = req.body.emergencia || null;
 
         if(_id) {
             Contato.findByIdAndUpdate(_id, req.body).exec().then(
