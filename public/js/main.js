@@ -2,6 +2,8 @@
 
 angular.module('contatooh', ['ngRoute', 'ngResource']).config(function($routeProvider) {
 
+    //$httpProvider.interceptors.push('meuInterceptor');
+    
     $routeProvider.when('/contatos', {
         templateUrl: 'partials/contatos.html',
         controller: 'ContatosController'

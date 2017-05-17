@@ -1,10 +1,10 @@
-// app/routes/auth.js
+//app/routes/auth.js
 
 var passport = require('passport');
 
 module.exports = function(app) {
-    app.get('authgithub', passport.authenticate('github'));
-    app.get('authgithub/callback', passport.authenticate('github', {
+    app.get('/auth/github', passport.authenticate('github'));
+    app.get('/auth/github/callback', passport.authenticate('github', {
         successRedirect: '/'
     }));
 }

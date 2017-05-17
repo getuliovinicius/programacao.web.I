@@ -2,6 +2,7 @@
 
 var passport = require('passport');
 var GitHubStrategy = require('passport-github').Strategy;
+var mongoose = require('mongoose');
 
 module.exports = function() {
 
@@ -9,9 +10,9 @@ module.exports = function() {
 
     passport.use(new GitHubStrategy(
         {
-            clientID: '',
-            clientSecret: '',
-            callbackURL: ''
+            clientID: 'e201bf0gtr397be0c5ff',
+            clientSecret: '1860e0lk87cd4dfcf374421a3875ba0f201ed063',
+            callbackURL: 'http://programacao-web-i.local:3000/auth/github/callback'
         },
         function(accessToken, refreshToken, profile, done) {
             Usuario.findOrCreate(
@@ -40,7 +41,8 @@ module.exports = function() {
     });
 
     /**
-     * Recebe o ObjectId do usuário armazenado na sessão
+     * Recebe o ObjectId do usuário armazenado na sessão.
+     * Chamado a CADA requisição
      */
     passport.deserializeUser(function(id, done) {
         Usuario.findById(id).exec().then(function(usuario) {
