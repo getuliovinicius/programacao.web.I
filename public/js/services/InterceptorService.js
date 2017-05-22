@@ -1,4 +1,4 @@
-//public/js/services/InterceptorService.js
+// public/js/services/InterceptorService.js
 
 angular.module('contatooh').factory('meuInterceptor', function($location, $q) {
     

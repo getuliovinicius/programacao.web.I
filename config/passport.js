@@ -10,8 +10,8 @@ module.exports = function() {
 
     passport.use(new GitHubStrategy(
         {
-            clientID: 'e201bf0gtr397be0c5ff',
-            clientSecret: '1860e0lk87cd4dfcf374421a3875ba0f201ed063',
+            clientID: 'e201bf0142397be0c5ff',
+            clientSecret: '1860e0115ccd4dfcf374421a3875ba0f201ed063',
             callbackURL: 'http://programacao-web-i.local:3000/auth/github/callback'
         },
         function(accessToken, refreshToken, profile, done) {
