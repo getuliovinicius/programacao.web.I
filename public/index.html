@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- public/index.html -->
+<!-- app/views/index.ejs -->
 <html lang="pt-BR" ng-app="contatooh">
 <head>
 	<meta charset="UTF-8">
@@ -8,36 +8,21 @@
 	<title>Contatooh</title>
 
 	<!-- build:css css/index.min.css -->
-	<!--<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap-theme.css" media="screen">-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap-theme.css" media="screen">
 	<!-- endbuild -->
 	
-	<!--<link rel="stylesheet" type="text/css" href="assets/css/main.css" media="screen">-->
 </head>
 
-<body>
-<!--<body class="container" ng-controller="ContatosController">-->
+<!--<body>-->
+<body class="container" ng-controller="ContatosController">
 
-	<!--<%if (usuarioLogado.length > 0) { %>
-	<div class="text-right">
-		<p>Logado como: <span id="usuario-logado"><%=usuarioLogado %></span> - <a href="/logout">Logout</a></p>
-	</div>
-	<% } %>-->
-
-	<!--<div ng-view></div>-->
-
+	<div ng-view></div>	
 	<hr>
-
-    <!--Questão da prova-->
-    <!--<div class="row">
-        <div class="col-xs-12">
-            <a class="btn btn-default" href="#!/ajuda">Ajuda</a>
-        </div>
-    </div>-->
 
     <div class="row">
         <div class="col-xs-12">
-			<div>
+			<!--<div>
         		<blockquote class="blockquote-reverse">
         			<p>Age sempre de tal modo que o teu comportamento possa vir a ser princípio de uma lei universal.</p>
 					<footer>Emmanuel Kant</footer>
@@ -72,7 +57,7 @@
         			<p>A verdade não resulta do número dos que nela creem.</p>
         			<footer>Galileu</footer>
         		</blockquote>
-        	</div>
+        	</div>-->
         	<div>
         		<blockquote class="blockquote-reverse">
         			<p>O homem realmente culto não se envergonha de fazer perguntas também aos menos instruídos.</p>
@@ -97,17 +82,17 @@
 	<!-- Carrega os scripts e bibliotecas javascript -->
 	
 	<!-- build:js js/index.min.js -->
-	<!--<script type="text/javascript" src="vendor/angular/angular.js"></script>
+	<script type="text/javascript" src="vendor/angular/angular.js"></script>
 	<script type="text/javascript" src="vendor/angular-route/angular-route.js"></script>
-	<script type="text/javascript" src="vendor/angular-resource/angular-resource.js"></script>
+	<!--<script type="text/javascript" src="vendor/angular-resource/angular-resource.js"></script>-->
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/services/ContatoService.js"></script>
-	<script type="text/javascript" src="js/services/InterceptorService.js"></script>
+	<!--<script type="text/javascript" src="js/services/ContatoService.js"></script>
+	<script type="text/javascript" src="js/services/InterceptorService.js"></script>-->
 	<script type="text/javascript" src="js/controllers/ContatosController.js"></script>
-	<script type="text/javascript" src="js/controllers/ContatoController.js"></script>-->
+	<script type="text/javascript" src="js/controllers/ContatoController.js"></script>
 	<!-- endbuild -->
-	<!--<script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
-	<script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.js"></script>-->
+	<script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 
 </html>
