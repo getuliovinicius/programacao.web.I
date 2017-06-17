@@ -1,0 +1,25 @@
+{
+  "name": "local.programacao-web-i.contatooh",
+  "description": "Aplicação web para controle de contatos.",
+  "main": "server.js",
+  "authors": [
+    "Getulio Vincius <getuliovinits@gmail.com>"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "Contatooh",
+    "Contatos"
+  ],
+  "homepage": "https://github.com/getuliovinicius/programacao.web.I",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}
