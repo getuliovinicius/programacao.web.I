@@ -9,7 +9,7 @@ remote_branch: gh-pages
 remote_name: origin
 docs_dir: 'mds'
 pages:
-    - Inicio: index.md
+    - Projeto Contatooh: index.md
 theme: readthedocs
 extra:
     version: 1.0
