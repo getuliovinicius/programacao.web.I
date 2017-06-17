@@ -1,0 +1,34 @@
+{
+  "name": "local.programacao-web-i.contatooh",
+  "version": "1.0.0",
+  "description": "Aplicação web para controle de contatos.",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getuliovinicius/programacao.web.I.git"
+  },
+  "keywords": [
+    "Contatooh",
+    "Contatos"
+  ],
+  "author": "Getulio Vincius <getuliovinits@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/getuliovinicius/programacao.web.I/issues"
+  },
+  "homepage": "https://github.com/getuliovinicius/programacao.web.I#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-load": "^1.1.16",
+    "method-override": "^2.3.9"
+  }
+}
