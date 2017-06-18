@@ -65,3 +65,27 @@ var emergencia = db.contatos.findOne( { "email" : "cont3@empresa.com.br" } )
 contato.emergencia = emergencia._id
 
 db.contatos.update( { "id" : contato.id }, contato )
+
+var contato = db.contatos.findOne( "id", contato.id )
+
+var emergencia = db.contatos.findOne( { "_id" : contato.emergencia} )
+
+var contato = db.contatos.findOne( { "email" : "cont2@empresa.com.br" } )
+
+contato
+
+var emergencia = db.contatos.findOne( { "_id" : contato.emergencia} )
+
+contato.emergencia = { "$ref" : "contatos", "$id" : emergencia._id}
+
+db.contatos.update( { "_id" : contato._id }, contato )
+
+var contato = db.contatos.findOne( { "_id" : contato._id } )
+
+contato
+
+contato.emergencia
+
+function refResolver(ref) { return db[ref.$ref].findOne( {"_id" : ref.$id } ) }
+
+var emergencia = refResolver(contato.emergencia)

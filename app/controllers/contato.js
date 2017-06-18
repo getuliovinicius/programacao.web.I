@@ -1,76 +1,87 @@
 // app/controllers/contato.js
 
-/**
- * Contatos definidos de modo estático
- */
-var contatos = [
-    {
-        _id: 1, nome: 'Contato Exemplo 1',
-        email: 'cont1@empresa.com.br'
-    },
-    {
-        _id: 2, nome: 'Contato Exemplo 2',
-        email: 'cont2@empresa.com.br'
-    },
-    {
-        _id: 3, nome: 'Contato Exemplo 3',
-        email: 'cont3@empresa.com.br'
-    }
-];
-
-var ID_CONTATO_INC = 3;
-
-module.exports = function() {
+module.exports = function(app) {
     
+    var Contato = app.models.contato;
     var controller = {};
     
     /**
      * Ação que lista os contatos existentes
      */
     controller.listaContatos = function(req, res) {
-        res.json(contatos);
+        //Contato.find().exec().then(
+        Contato.find().populate('emergencia').exec().then(
+            function(contatos) {
+                res.json(contatos);
+            },
+            function(erro) {
+                console.error(erro);
+                res.status(500).json(erro);
+            }
+        );
     };
 
     /**
      * Ação que obtem um contato especifico
      */
     controller.obtemContato = function(req, res) {
-        console.log(req.params.id);
-
-        var idContato = req.params.id;
-        var contato = contatos.filter(
+        var _id = req.params.id;
+        Contato.findById(_id).exec().then(
             function(contato) {
-                return contato._id == idContato;
+                if (!contato) throw new Error("Contato não encontrado.");
+                res.json(contato);
+            },
+            function(erro) {
+                console.log(erro);
+                res.status(404).json(erro);
             }
-        )[0];
-
-        contato ? res.json(contato) : res.status(404).send('Contato não encontrado.');
+        );
     };
 
     /**
      * Ação que remove um contato da lista
      */
     controller.removeContato = function(req, res) {
-        var idContato = req.params.id;
-            
-        contatos = contatos.filter(
-            function(contato) {
-                return contato._id != idContato;
+        var _id = req.params.id;
+        Contato.remove({"_id" : _id}).exec().then(
+            function() {
+                res.status(204).end();
+            },
+            function(erro) {
+                return console.error(erro);
             }
         );
-        
-        res.status(204).end();
     };
 
     /**
      * Ação que salva um contato na agenda
      */
     controller.salvaContato = function(req, res) {
-        var contato = req.body;
+        var _id = req.body._id;
 
-        contato = contato._id ? atualiza(contato) : adiciona(contato);
+        req.body.emergencia = req.body.emergencia || null;
 
-        res.json(contato);
+        if(_id) {
+            Contato.findByIdAndUpdate(_id, req.body).exec().then(
+                function(contato) {
+                    res.json(contato);
+                },
+                function(erro) {
+                    console.error(erro);
+                    res.status(500).json(erro);
+                }
+            );
+        } else {
+            Contato.create(req.body).then(
+                function(contato) {
+                    res.status(201).json(contato);
+                },
+                function(erro) {
+                    console.log(erro);
+                    res.status(500).json(erro);
+                }
+            );
+        }
     };
 
     /**
@@ -78,9 +89,6 @@ module.exports = function() {
      * @param {*} contatoNovo 
      */
     function adiciona(contatoNovo) {
-        contatoNovo._id = ++ID_CONTATO_INC;
-        contatos.push(contatoNovo);
-        return contatoNovo;
     }
 
     /**
@@ -88,15 +96,6 @@ module.exports = function() {
      * @param {*} contatoAlterar 
      */
     function atualiza(contatoAlterar) {
-        contatos = contatos.map(
-            function(contato) {
-                if(contato._id == contatoAlterar._id) {
-                    contato = contatoAlterar;
-                }
-                return contato;
-            }
-        );
-        return contatoAlterar;
     }
 
     return controller;
