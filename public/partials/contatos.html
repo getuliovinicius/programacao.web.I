@@ -1,4 +1,5 @@
 <!-- public/partials/contatos.html -->
+
 <div class="row">
     <div class="col-xs-12">
         <div class="jumbotron">
@@ -9,11 +10,11 @@
     </div>
 </div>
 
-<!--<div class="row">
+<div class="row">
     <div class="col-xs-12">
         <p class="text-{{mensagem.class}}" ng-show="mensagem.texto">{{mensagem.texto}}</p>
     </div>
-</div>-->
+</div>
 
 <div class="row">
     <div class="col-xs-12">
@@ -23,12 +24,12 @@
 
 <hr>
 
-<!--<div class="row">
+<div class="row">
     <div class="col-xs-12">
         <p class="text-info" ng-show="contatos.length">Contatos cadastrados: {{contatos.length}}</p>
         <p class="text-info" ng-hide="contatos.length">Não há contatos cadastrados.</p>
     </div>
-</div>-->
+</div>
 
 <hr>
 
@@ -64,7 +65,7 @@
                     <td>{{contato.endereco}}</td>
                     <td>{{contato.emergencia.nome}}</td>-->
                     <td class="text-center">
-                        <button class="btn btn-danger" ng-click="remove(contato)">Remover</button>
+                        <button class="btn btn-danger" ng-click="removeContato(contato)">Remover</button>
                     </td>
                 </tr>
             </table>
