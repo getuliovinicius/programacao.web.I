@@ -1,5 +1,7 @@
 // app/controllers/contato.js
 
+var sanitize = require('mongo-sanitize');
+
 module.exports = function(app) {
     
     var Contato = app.models.contato;
@@ -42,7 +44,8 @@ module.exports = function(app) {
      * Ação que remove um contato da lista
      */
     controller.removeContato = function(req, res) {
-        var _id = req.params.id;
+        // var _id = req.params.id;
+        var _id = sanitize(req.params.id);
         Contato.remove({"_id" : _id}).exec().then(
             function() {
                 res.status(204).end();
@@ -58,11 +61,20 @@ module.exports = function(app) {
      */
     controller.salvaContato = function(req, res) {
         var _id = req.body._id;
+        /**
+         * Independente da quantidade de parâmetros,
+         * apenas selecionamos os que desejamos:
+         */
+        var dados = {
+            "nome" : req.body.nome,
+            "email" : req.body.email,
+            "endereco" : req.body.endereco,
+            "telefone" : req.body.telefone,
+            "emergencia" : req.body.emergencia || null
+        };
 
-        req.body.emergencia = req.body.emergencia || null;
-
-        if(_id) {
-            Contato.findByIdAndUpdate(_id, req.body).exec().then(
+            if(_id) {
+            Contato.findByIdAndUpdate(_id, dados).exec().then(
                 function(contato) {
                     res.json(contato);
                 },
@@ -72,7 +84,7 @@ module.exports = function(app) {
                 }
             );
         } else {
-            Contato.create(req.body).then(
+            Contato.create(dados).then(
                 function(contato) {
                     res.status(201).json(contato);
                 },

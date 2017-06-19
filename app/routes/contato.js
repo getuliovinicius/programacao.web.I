@@ -4,7 +4,6 @@ function verificaAutenticacao(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     } else {
-        console.log("que merda");
         res.status('401').json('Não autorizado.');
     }
 }

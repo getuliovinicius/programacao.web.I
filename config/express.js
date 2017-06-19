@@ -11,6 +11,7 @@ var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
+var helmet = require('helmet');
 
 module.exports = function() {
 
@@ -45,6 +46,16 @@ module.exports = function() {
     ));
     app.use(passport.initialize());
     app.use(passport.session());
+    
+    /**
+     * Aprimoramento da segurança
+     */
+    app.use(helmet());
+    app.use(helmet.hidePoweredBy({ setTo: 'PHP 5.5.14' }));
+    app.use(helmet.frameguard());
+    app.use(helmet.xssFilter());
+    app.use(helmet.noSniff());
+    app.disable('x-powered-by');
     
     /**
      * Carregamento de rotas

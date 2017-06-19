@@ -45,3 +45,6 @@
 
 # Temporary files
 /.tmp
+
+# Old files
+/*.old
