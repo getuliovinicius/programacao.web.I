@@ -84,20 +84,6 @@ module.exports = function(app) {
         }
     };
 
-    /**
-     * Ação que adiciona um novo contato na agenda
-     * @param {*} contatoNovo 
-     */
-    function adiciona(contatoNovo) {
-    }
-
-    /**
-     * Ação que atualiza um contato na agenda
-     * @param {*} contatoAlterar 
-     */
-    function atualiza(contatoAlterar) {
-    }
-
     return controller;
 
 };

@@ -7,14 +7,22 @@ module.exports = function() {
         {
             nome: {
                 type: String,
-                required : true
+                required: true
             },
             email: {
                 type: String,
-                required : true,
+                required: true,
                 index: {
                     unique: true
                 }
+            },
+            endereco: {
+                type: String,
+                required: true
+            },
+            telefone: {
+                type: String,
+                required: true
             },
             emergencia: {
                 type: mongoose.Schema.ObjectId,
