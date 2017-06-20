@@ -1,11 +1,21 @@
 <!-- public/partials/contato.html -->
-<div class="row">
+<!--<div class="row">
     <div class="col-xs-12">
         <div class="jumbotron">
             <div class="page-header">
                 <h1>Contatooh <small>{{contato.nome}}</small></h1>
             </div>
         </div>
+    </div>
+</div>-->
+
+<div class="row">
+    <div class="col-xs-12">
+        <ol class="breadcrumb">
+            <li><a href="/">Início</a></li>
+            <li><a href="/#!/contatos">Contatos</a></li>
+            <li class="active">{{contato.nome}}</li>
+        </ol>
     </div>
 </div>
 
@@ -32,10 +42,6 @@
             <div class="form-group">
                 <label for="endereco">Endereço</label>
                 <input type="text" id="endereco" name="endereco" placeholder="ex. Rua João Silva, 23" required class="form-control" ng-model="contato.endereco" />
-            </div>
-            <div class="form-group">
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="telefone" placeholder="99-99999-9999" required class="form-control" ng-model="contato.telefone" />
             </div>
             <div class="form-group">
                 <label for="emergencia">Emergência</label>

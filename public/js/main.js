@@ -4,6 +4,10 @@ angular.module('contatooh', ['ngRoute', 'ngResource']).config(function($routePro
     
     $httpProvider.interceptors.push('meuInterceptor');
     
+    $routeProvider.when('/', {
+        templateUrl: 'partials/inicio.html'
+    });
+
     $routeProvider.when('/contatos', {
         templateUrl: 'partials/contatos.html',
         controller: 'ContatosController'
@@ -19,6 +23,21 @@ angular.module('contatooh', ['ngRoute', 'ngResource']).config(function($routePro
         controller: 'ContatoController'
     });
 
+    $routeProvider.when('/telefones', {
+        templateUrl: 'partials/telefones.html',
+        controller: 'TelefonesController'
+    });
+
+    $routeProvider.when('/telefone/:telefoneId', {
+        templateUrl: 'partials/telefone.html',
+        controller: 'TelefoneController'
+    });
+
+    $routeProvider.when('/telefone', {
+        templateUrl: 'partials/telefone.html',
+        controller: 'TelefoneController'
+    });
+
     /**
      * item da prova
      */
@@ -30,6 +49,6 @@ angular.module('contatooh', ['ngRoute', 'ngResource']).config(function($routePro
         templateUrl: 'partials/auth.html'
     });
 
-    $routeProvider.otherwise({redirectTo: '/contatos'});
+    $routeProvider.otherwise({redirectTo: '/'});
 
 });

@@ -1,0 +1,51 @@
+<!-- public/partials/telefone.html -->
+
+<!--<div class="row">
+    <div class="col-xs-12">
+        <div class="jumbotron">
+            <div class="page-header">
+                <h1>Contatooh <small>{{telefone.numeroTelefone}}</small></h1>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="row">
+    <div class="col-xs-12">
+        <ol class="breadcrumb">
+            <li><a href="/">Início</a></li>
+            <li><a href="/#!/telefones">Telefones</a></li>
+            <li class="active">{{telefone.numeroTelefone}}</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <p class="text-{{mensagem.class}}" ng-show="mensagem.texto">{{mensagem.texto}}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <form ng-submit="salvaTelefone()">
+            <div class="form-group">
+                <label for="numeroTelefone">Número</label>
+                <input type="tel" id="numeroTelefone" name="numeroTelefone" required class="form-control" ng-model="telefone.numeroTelefone">
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <input type="text" id="tipo" name="tipo" placeholder="ex. Celular" required class="form-control" ng-model="telefone.tipo" />
+            </div>
+            <div class="form-group">
+                <label for="contato">Contato</label>
+                <select id="contato" name="contato" class="form-control" ng-model="telefone.contato" ng-options=
+"contato._id as contato.nome for contato in contatos"></select>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="/#!/telefones" class="btn btn-default">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
